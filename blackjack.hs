@@ -13,7 +13,6 @@ drawDealerCards gen total | total < 11 && randomNumber == 1 = toEnum (randomNumb
                           | otherwise = []
                           where (randomNumber, newGen) = randomR (1,13) gen :: (Int, StdGen)
 
--- Single card and two at start
 startJugadorCards :: StdGen -> Int -> [Letters]
 startJugadorCards gen stop | stop /= 0 = toEnum (randomNumber - 1) : startPlayerCards newGen (stop - 1)
                           | otherwise = []
